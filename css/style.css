@@ -191,26 +191,36 @@ ul {
 /* --------------------------------------------------------------------------
    3. EN-TÊTE ULTRA-MINIMALISTE & STICKY
    -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
 .top-banner {
   background: var(--gradient-gold);
   color: #0b132b;
   padding: 0.35rem 1rem;
-  font-weight: 700;
-  font-size: 0.84rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-weight: 800;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .top-banner-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: 0.4rem;
   text-align: center;
+  white-space: nowrap;
 }
 
 .top-banner-icon {
   font-size: 0.95rem;
+  color: #0b132b;
   animation: flame 1.5s ease-in-out infinite alternate;
 }
 
@@ -222,11 +232,11 @@ ul {
 .countdown-box {
   background: #0b132b;
   color: var(--gold-light);
-  padding: 0.12rem 0.45rem;
-  border-radius: 5px;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
   font-family: monospace;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-weight: 900;
+  letter-spacing: 0.05em;
   font-size: 0.85rem;
   margin: 0 0.15rem;
   display: inline-block;
@@ -235,22 +245,11 @@ ul {
 /* --------------------------------------------------------------------------
    4. NAVIGATION (STICKY ÉPURÉE)
    -------------------------------------------------------------------------- */
-.site-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
 .navbar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #ffffff;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 0.55rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  padding: 0.45rem 0;
   transition: var(--transition-base);
 }
 
@@ -263,21 +262,29 @@ ul {
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--bg-primary);
+  gap: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #0b132b;
   text-decoration: none;
 }
 
 .navbar-logo-img {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--gold-primary);
-  box-shadow: var(--shadow-gold);
+  border: 1.5px solid var(--gold-primary);
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
   flex-shrink: 0;
+}
+
+.navbar-cta-btn {
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  border-radius: 50px;
+  white-space: nowrap;
 }
 
 .logo-icon {
@@ -1815,285 +1822,130 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
-   19. RESPONSIVE DESIGN : TABLETTES & IPAD (769px à 1024px)
+   19. RESPONSIVE DESIGN (MEDIA QUERIES)
    -------------------------------------------------------------------------- */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    max-width: 100%;
-    padding: 0 1.75rem;
-  }
-
-  /* Navigation tablette */
-  .navbar {
-    padding: 0.6rem 0;
-  }
-
-  .navbar-logo {
-    font-size: 1.15rem;
-    gap: 0.5rem;
-  }
-
-  .navbar-logo-img {
-    width: 34px;
-    height: 34px;
-  }
-
-  .navbar-links {
-    gap: 1.15rem;
-  }
-
-  .navbar-links a {
-    font-size: 0.85rem;
-  }
-
-  .navbar .btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.82rem;
-    gap: 0.4rem;
-  }
-
-  /* Hero Section tablette */
-  .hero-section {
-    padding: 55px 0 65px 0;
-  }
-
+@media (max-width: 992px) {
   .hero-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 2rem;
-    align-items: center;
-    text-align: left;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
   }
   
   .hero-content h1 {
-    font-size: 2.2rem;
-    line-height: 1.22;
-    margin-bottom: 1.25rem;
+    font-size: 2.3rem;
   }
   
-  .hero-lead {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
   .hero-actions {
-    align-items: flex-start;
-    gap: 0.85rem;
-    margin-bottom: 1.5rem;
+    align-items: center;
   }
   
   .hero-buttons {
-    justify-content: flex-start;
-    gap: 0.75rem;
-  }
-
-  .btn-large {
-    font-size: 1.05rem;
-    padding: 0.95rem 1.85rem;
-    max-width: none;
-    width: auto;
+    justify-content: center;
   }
   
   .social-proof-hero {
-    justify-content: flex-start;
-    padding-top: 1.25rem;
+    justify-content: center;
   }
-
-  .mockup-wrapper {
-    max-width: 340px;
+  
+  .bundle-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .cover-stack {
     margin: 0 auto;
   }
-
-  /* Section Empathie tablette */
-  .empathy-section {
-    padding: 70px 0;
+  
+  .contrast-grid {
+    grid-template-columns: 1fr;
   }
-
-  .empathy-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .empathy-card {
-    padding: 1.75rem 1.5rem;
-  }
-
-  .empathy-reassurance {
-    padding: 2.25rem 2rem;
-  }
-
-  .empathy-reassurance h3 {
-    font-size: 1.6rem;
-  }
-
-  /* Section 3 Modules tablette */
-  .method-section {
-    padding: 70px 0;
-  }
-
-  .phases-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .phase-card {
-    padding: 1.85rem 1.35rem;
-  }
-
-  .phase-number {
-    font-size: 2.4rem;
-    top: 1rem;
-    right: 1rem;
-  }
-
-  .phase-card h3 {
-    font-size: 1.2rem;
-  }
-
-  /* Section Showcase Guide tablette */
-  .bundle-section {
-    padding: 75px 0;
-  }
-
-  .bundle-grid {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .bundle-single-showcase {
-    max-width: 380px;
-  }
-
-  .bundle-item-card {
-    padding: 1rem 1.25rem;
-    gap: 1rem;
-  }
-
-  .bundle-item-content h4 {
-    font-size: 1.05rem;
-  }
-
-  /* Section Témoignages tablette */
-  .testimonials-section {
-    padding: 70px 0;
-  }
-
-  .testimonials-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .testimonial-card {
-    padding: 1.75rem 1.25rem;
-  }
-
-  .testimonial-quote {
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
-
-  /* Section Pricing tablette */
-  .pricing-section {
-    padding: 75px 0;
-  }
-
-  .pricing-card {
-    max-width: 680px;
-  }
-
-  .pricing-header {
-    padding: 2rem 1.5rem;
-  }
-
-  .pricing-header h3 {
-    font-size: 1.9rem;
-  }
-
-  .pricing-body {
-    padding: 2.25rem 1.75rem;
-  }
-
-  .current-price {
-    font-size: 3.4rem;
-  }
-
-  .checklist-items {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.85rem 1.25rem;
-  }
-
-  /* Footer tablette */
-  .footer {
-    padding: 55px 0 25px 0;
-  }
-
+  
   .footer-grid {
-    grid-template-columns: 1.3fr 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
   }
 
-  /* Toast en bas sur tablette */
-  .social-proof-toast {
-    bottom: 76px;
-    left: 20px;
-    max-width: 350px;
+  .legal-card {
+    padding: 2.5rem 1.75rem;
   }
 }
 
 @media (max-width: 768px) {
-  /* En-tête mobile ultra-compact qui ne sature jamais l'écran */
+  /* En-tête mobile ultra-propre et compact identique à la maquette */
   .site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   }
 
   .top-banner {
     font-size: 0.72rem;
-    padding: 0.25rem 0.5rem;
+    font-weight: 800;
+    padding: 0.32rem 0.5rem;
     line-height: 1.2;
+    background: var(--gradient-gold);
+    color: #0b132b;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
   
   .top-banner-content {
-    gap: 0.25rem;
+    gap: 0.3rem;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .top-banner-icon {
+    font-size: 0.85rem;
   }
 
   .top-banner-content .countdown-box {
     font-size: 0.75rem;
-    padding: 0.1rem 0.35rem;
+    font-weight: 900;
+    padding: 0.12rem 0.4rem;
+    border-radius: 4px;
+    background: #0b132b;
+    color: var(--gold-light);
   }
 
   .navbar {
-    padding: 0.35rem 0;
-    background: rgba(255, 255, 255, 0.96);
+    padding: 0.45rem 0;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
 
   .navbar-container {
-    padding: 0 0.75rem;
+    padding: 0 0.65rem;
+    gap: 0.5rem;
   }
 
   .navbar-logo {
-    font-size: 1.05rem;
-    gap: 0.45rem;
+    font-size: 0.98rem;
+    font-weight: 900;
+    gap: 0.4rem;
+    color: #0b132b;
   }
 
   .navbar-logo-img {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-primary);
   }
   
   .navbar-links {
     display: none;
   }
   
-  .navbar .btn {
-    padding: 0.35rem 0.75rem;
-    font-size: 0.78rem;
+  .navbar-cta-btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.74rem;
+    font-weight: 800;
+    border-radius: 50px;
     gap: 0.35rem;
+    white-space: nowrap;
+    background: var(--gradient-gold);
+    color: #0b132b;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
   }
 
   /* Respiration & Espace du contenu Hero */
